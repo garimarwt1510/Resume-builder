@@ -1,0 +1,35 @@
+/* filename: frontend/src/components/dashboard/ResumeCard.css */
+.resume-card { padding: 0; overflow: hidden; }
+.resume-card-thumb {
+  height: 90px;
+  background: repeating-linear-gradient(135deg, var(--color-border) 0 2px, transparent 2px 14px);
+  border-top: 5px solid var(--color-forest);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3);
+}
+.resume-card-template {
+  text-transform: capitalize;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--color-paper-raised);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+}
+.resume-card-body { padding: var(--space-4) var(--space-4) var(--space-5); }
+.resume-card-body h3 { cursor: pointer; font-size: 1.05rem; margin-bottom: 2px; }
+.resume-card-body h3:hover { color: var(--color-forest); }
+.resume-card-meta { color: var(--color-ink-soft); font-size: 0.82rem; margin-bottom: var(--space-3); }
+.resume-card-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.resume-card-actions button {
+  background: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: var(--color-ink);
+}
+.resume-card-actions button:hover { border-color: var(--color-forest); }
+.resume-card-danger:hover { border-color: var(--color-danger) !important; color: var(--color-danger); }

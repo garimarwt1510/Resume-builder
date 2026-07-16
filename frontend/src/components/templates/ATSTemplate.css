@@ -1,0 +1,6 @@
+/* filename: frontend/src/components/templates/ATSTemplate.css */
+.ats-template { font-family: "Arial", sans-serif; }
+.ats-template .resume-section-title { color: #000 !important; border-bottom-color: #000 !important; }
+.ats-name { font-family: "Arial", sans-serif; font-size: 1.5rem; margin-bottom: 2px; }
+.ats-role { margin-bottom: 4px; }
+.ats-contact { font-size: 0.8rem; color: #333; margin-bottom: 16px; }

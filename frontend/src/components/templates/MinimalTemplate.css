@@ -1,0 +1,7 @@
+/* filename: frontend/src/components/templates/MinimalTemplate.css */
+.minimal-template { font-family: "Inter", sans-serif; }
+.minimal-name { font-family: "Inter", sans-serif; font-weight: 800; font-size: 1.7rem; margin-bottom: 2px; }
+.minimal-role { color: #555; margin-bottom: 6px; }
+.minimal-contact { font-size: 0.78rem; color: #777; }
+.minimal-rule { border: none; border-top: 1px solid; margin: 18px 0; opacity: 0.4; }
+.minimal-template .resume-section-title { border-bottom: none; font-weight: 700; color: #222 !important; }
