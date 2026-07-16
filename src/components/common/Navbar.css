@@ -1,0 +1,79 @@
+/* filename: frontend/src/components/common/Navbar.css */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(6px);
+}
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-ink);
+}
+.navbar-seal { color: var(--color-seal); font-size: 1.1rem; }
+
+.navbar-links { display: flex; align-items: center; gap: var(--space-5); }
+.navbar-links a { font-weight: 500; color: var(--color-ink-soft); transition: color var(--transition-fast); }
+.navbar-links a:hover { color: var(--color-forest); }
+
+.navbar-cta {
+  background: var(--color-forest);
+  color: #fff !important;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+}
+.navbar-cta:hover { background: var(--color-forest-light); }
+
+.navbar-user { font-size: 0.88rem; color: var(--color-ink-soft); }
+
+.navbar-logout {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  cursor: pointer;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+.navbar-logout:hover { border-color: var(--color-danger); color: var(--color-danger); }
+
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.navbar-burger span { width: 22px; height: 2px; background: var(--color-ink); }
+
+@media (max-width: 860px) {
+  .navbar-burger { display: flex; }
+  .navbar-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--color-paper-raised);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-4) var(--space-5);
+    gap: var(--space-4);
+    display: none;
+  }
+  .navbar-links-open { display: flex; }
+}

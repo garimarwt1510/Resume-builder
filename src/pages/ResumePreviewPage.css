@@ -1,0 +1,17 @@
+/* filename: frontend/src/pages/ResumePreviewPage.css */
+.preview-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) 0;
+}
+.preview-toolbar-inner { display: flex; justify-content: space-between; align-items: center; }
+.preview-toolbar-actions { display: flex; gap: var(--space-3); }
+.preview-canvas { padding: var(--space-6) var(--space-4); display: flex; justify-content: center; }
+
+@media print {
+  .no-print { display: none !important; }
+  .preview-canvas { padding: 0; }
+}
