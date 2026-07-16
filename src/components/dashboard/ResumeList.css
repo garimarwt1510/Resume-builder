@@ -1,6 +1,0 @@
-/* filename: frontend/src/components/dashboard/ResumeList.css */
-.resume-list-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--space-5);
-}

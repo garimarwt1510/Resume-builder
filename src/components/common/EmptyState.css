@@ -1,8 +1,0 @@
-/* filename: frontend/src/components/common/EmptyState.css */
-.empty-state {
-  text-align: center;
-  padding: var(--space-8) var(--space-4);
-  color: var(--color-ink-soft);
-}
-.empty-state-icon { font-size: 2.4rem; margin-bottom: var(--space-3); }
-.empty-state h3 { color: var(--color-ink); margin-bottom: var(--space-2); }

@@ -1,5 +1,0 @@
-/* filename: frontend/src/components/admin/StatsCard.css */
-.stats-card { display: flex; align-items: center; gap: var(--space-4); }
-.stats-card-icon { font-size: 1.8rem; }
-.stats-card-value { font-size: 1.6rem; font-weight: 700; font-family: var(--font-display); }
-.stats-card-label { color: var(--color-ink-soft); font-size: 0.85rem; }
