@@ -1,0 +1,53 @@
+# filename: docker-compose.yml
+# Local development stack: MongoDB + backend API + frontend dev server.
+# Run with: docker compose up --build
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: resume-builder-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: resume-builder-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    environment:
+      # Override MONGO_URI to point at the local `mongo` service when using
+      # docker compose instead of MongoDB Atlas. Comment this out to use
+      # the Atlas URI from backend/.env instead.
+      MONGO_URI: mongodb://mongo:27017/resume-builder
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Static build served by `serve` has no proxy, so it must call the
+        # backend directly. Change this if deploying behind a reverse proxy.
+        VITE_API_BASE_URL: http://localhost:5000/api
+    container_name: resume-builder-frontend
+    restart: unless-stopped
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
